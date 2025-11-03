@@ -1,0 +1,23 @@
+# 개인 설정 및 로컬 파일
+settings.local.json
+
+# 세션 및 실행 데이터
+debug/
+file-history/
+history.jsonl
+ide/
+session-env/
+shell-snapshots/
+statsig/
+todos/
+downloads/
+projects/
+plugins/
+
+# 임시 파일
+*.lock
+*.log
+.DS_Store
+
+# Node modules (혹시 있을 수 있으니)
+node_modules/

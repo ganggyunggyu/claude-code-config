@@ -1,0 +1,35 @@
+{
+  "editor": {
+    "theme": "dark",
+    "fontSize": 14,
+    "fontFamily": "Monaco, 'Cascadia Code', 'Fira Code', Consolas, monospace",
+    "wordWrap": true,
+    "minimap": true,
+    "lineNumbers": true
+  },
+  "ai": {
+    "model: :claude-sonnet-4-20250514"",
+    "temperature": 0.7,
+    "maxTokens": 8192
+  },
+  "workspace": {
+    "defaultDirectory": "~/",
+    "autoSave": true,
+    "showHiddenFiles": false
+  },
+  "terminal": {
+    "shell": "/bin/zsh",
+    "fontSize": 12,
+    "theme": "dark"
+  },
+  "keybindings": {
+    "toggleSidebar": "cmd+b",
+    "newFile": "cmd+n",
+    "openFile": "cmd+o",
+    "save": "cmd+s"
+  },
+  "extensions": {
+    "autoUpdate": true,
+    "enabledExtensions": []
+  }
+}
