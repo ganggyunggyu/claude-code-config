@@ -13,6 +13,12 @@ todos/
 downloads/
 projects/
 plugins/
+cache/
+paste-cache/
+plans/
+tasks/
+telemetry/
+stats-cache.json
 
 # 임시 파일
 *.lock

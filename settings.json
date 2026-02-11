@@ -1,35 +1,20 @@
 {
-  "editor": {
-    "theme": "dark",
-    "fontSize": 14,
-    "fontFamily": "Monaco, 'Cascadia Code', 'Fira Code', Consolas, monospace",
-    "wordWrap": true,
-    "minimap": true,
-    "lineNumbers": true
-  },
-  "ai": {
-    "model: :claude-sonnet-4-20250514"",
-    "temperature": 0.7,
-    "maxTokens": 8192
-  },
-  "workspace": {
-    "defaultDirectory": "~/",
-    "autoSave": true,
-    "showHiddenFiles": false
-  },
-  "terminal": {
-    "shell": "/bin/zsh",
-    "fontSize": 12,
-    "theme": "dark"
-  },
-  "keybindings": {
-    "toggleSidebar": "cmd+b",
-    "newFile": "cmd+n",
-    "openFile": "cmd+o",
-    "save": "cmd+s"
-  },
-  "extensions": {
-    "autoUpdate": true,
-    "enabledExtensions": []
+  "permissions": {
+    "allow": [
+      "Bash(npx playwright install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(tree:*)",
+      "Bash(npx tsx:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(.venv/bin/python:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(BATCH_SIZE=30 MIN_DELAY=11 MAX_DELAY=15 HEADLESS=true CAPTCHA_API_KEY=* npx tsx:*)",
+      "Bash(CAPTCHA_API_KEY=* BATCH_SIZE=25 MIN_DELAY=35 MAX_DELAY=40 HEADLESS=true npx tsx:*)"
+    ]
   }
 }
