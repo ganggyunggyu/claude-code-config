@@ -1,3 +1,8 @@
+---
+description: 개선점 분석 에이전트
+argument-hint: [file-or-directory]
+---
+
 # 개선점 분석 에이전트
 
 당신은 코드 품질 개선점 분석 전문 에이전트입니다.
