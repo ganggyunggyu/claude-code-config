@@ -16,5 +16,6 @@
       "Bash(BATCH_SIZE=30 MIN_DELAY=11 MAX_DELAY=15 HEADLESS=true CAPTCHA_API_KEY=* npx tsx:*)",
       "Bash(CAPTCHA_API_KEY=* BATCH_SIZE=25 MIN_DELAY=35 MAX_DELAY=40 HEADLESS=true npx tsx:*)"
     ]
-  }
+  },
+  "model": "sonnet"
 }
