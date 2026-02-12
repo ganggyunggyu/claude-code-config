@@ -36,68 +36,89 @@ Each domain slice follows this internal structure:
 entities/
 ├── index.ts                    # Barrel export (re-exports all slices)
 ├── search/
+│   ├── index.ts                # Slice barrel export
 │   ├── api/
-│   │   ├── searchApi.ts        # API functions (Axios)
-│   │   └── index.ts
+│   │   ├── index.ts
+│   │   └── search-api/
+│   │       └── index.ts        # API functions (Axios)
 │   ├── hooks/
-│   │   ├── useSearchManuscripts.ts
-│   │   ├── useSearchHistory.ts
-│   │   ├── useSearchActions.ts
-│   │   ├── useAutocomplete.ts
-│   │   ├── useBookmarks.ts
-│   │   ├── usePopular.ts
-│   │   ├── useStats.ts
-│   │   └── index.ts
+│   │   ├── index.ts
+│   │   ├── use-search-manuscripts/
+│   │   │   └── index.ts
+│   │   ├── use-search-history/
+│   │   │   └── index.ts
+│   │   ├── use-search-actions/
+│   │   │   └── index.ts
+│   │   ├── use-autocomplete/
+│   │   │   └── index.ts
+│   │   ├── use-bookmarks/
+│   │   │   └── index.ts
+│   │   ├── use-popular/
+│   │   │   └── index.ts
+│   │   └── use-stats/
+│   │       └── index.ts
 │   ├── model/
-│   │   ├── types.ts            # TypeScript types/interfaces
-│   │   └── index.ts
-│   ├── stores/
-│   │   ├── searchStore.ts      # Jotai atoms or Pinia store
-│   │   └── index.ts
-│   └── index.ts                # Slice barrel export
+│   │   ├── index.ts
+│   │   └── types/
+│   │       └── index.ts        # TypeScript types/interfaces
+│   └── stores/
+│       ├── index.ts
+│       └── search-store/
+│           └── index.ts        # Jotai atoms or Pinia store
 ├── queue/
+│   ├── index.ts
 │   ├── api/
-│   │   ├── queueApi.ts
-│   │   └── index.ts
+│   │   ├── index.ts
+│   │   └── queue-api/
+│   │       └── index.ts
 │   ├── hooks/
-│   │   ├── useQueueDashboard.ts
-│   │   ├── useQueueJobs.ts
-│   │   ├── useQueueMutations.ts
-│   │   └── index.ts
-│   ├── model/
-│   │   ├── types.ts
-│   │   └── index.ts
-│   └── index.ts
+│   │   ├── index.ts
+│   │   ├── use-queue-dashboard/
+│   │   │   └── index.ts
+│   │   ├── use-queue-jobs/
+│   │   │   └── index.ts
+│   │   └── use-queue-mutations/
+│   │       └── index.ts
+│   └── model/
+│       ├── index.ts
+│       └── types/
+│           └── index.ts
 ├── published/
+│   ├── index.ts
 │   ├── api/
-│   │   ├── publishedApi.ts
-│   │   └── index.ts
-│   ├── model/
-│   │   ├── types.ts
-│   │   └── index.ts
-│   └── index.ts
+│   │   ├── index.ts
+│   │   └── published-api/
+│   │       └── index.ts
+│   └── model/
+│       ├── index.ts
+│       └── types/
+│           └── index.ts
 └── upload/
+    ├── index.ts
     ├── api/
-    │   ├── uploadApi.ts
-    │   └── index.ts
-    ├── model/
-    │   ├── types.ts
-    │   └── index.ts
-    └── index.ts
+    │   ├── index.ts
+    │   └── upload-api/
+    │       └── index.ts
+    └── model/
+        ├── index.ts
+        └── types/
+            └── index.ts
 ```
 
 ## Slice Internal Segments
 
 | Segment | Purpose | Naming |
 |---------|---------|--------|
-| `api/` | Axios API functions | `{domain}Api.ts` |
-| `model/` | TypeScript types, interfaces | `types.ts` |
-| `hooks/` | Custom hooks (React) / Composables (Vue) | `use{Action}.ts` |
-| `stores/` | State management (Jotai atoms / Pinia stores) | `{domain}Store.ts` |
-| `ui/` | Presentational components | `{ComponentName}.tsx` |
-| `presets/` | Domain-specific presets/constants | `index.ts` |
+| `api/` | Axios API functions | `{domain}-api/index.ts` |
+| `model/` | TypeScript types, interfaces | `types/index.ts` |
+| `hooks/` | Custom hooks (React) / Composables (Vue) | `use-{action}/index.ts` |
+| `stores/` | State management (Jotai atoms / Pinia stores) | `{domain}-store/index.ts` |
+| `ui/` | Presentational components | `{component-name}/index.tsx` |
+| `presets/` | Domain-specific presets/constants | `{preset-name}/index.ts` |
 
 Not every slice needs all segments. Only create what the domain requires.
+
+**폴더 네이밍 규칙**: 모든 모듈은 `kebab-case` 폴더명 + `index.ts` 구조를 따릅니다.
 
 ## Barrel Export Pattern (Required)
 
@@ -105,12 +126,12 @@ Every folder must have `index.ts`. Exports bubble up hierarchically.
 
 ```typescript
 // entities/search/api/index.ts
-export * from './searchApi';
+export * from './search-api';
 
 // entities/search/hooks/index.ts
-export * from './useSearchManuscripts';
-export * from './useSearchHistory';
-export * from './useSearchActions';
+export * from './use-search-manuscripts';
+export * from './use-search-history';
+export * from './use-search-actions';
 
 // entities/search/model/index.ts
 export * from './types';
@@ -142,12 +163,14 @@ import { useSearchManuscripts, getSearchList, type SearchResult } from '@/entiti
 
 | Category | Pattern | Example |
 |----------|---------|---------|
-| API files | `{domain}Api.ts` | `searchApi.ts`, `queueApi.ts` |
-| Hook files | `use{Action}.ts` | `useSearchHistory.ts`, `useQueueJobs.ts` |
-| Store files | `{domain}Store.ts` | `searchStore.ts` |
-| Type files | `types.ts` | `types.ts` (always) |
-| Component files | `{PascalCase}.tsx` | `SearchCard.tsx` |
+| API | `{domain}-api/index.ts` | `search-api/index.ts`, `queue-api/index.ts` |
+| Hook | `use-{action}/index.ts` | `use-search-history/index.ts`, `use-queue-jobs/index.ts` |
+| Store | `{domain}-store/index.ts` | `search-store/index.ts` |
+| Type | `types/index.ts` | `types/index.ts` (always) |
+| Component | `{component-name}/index.tsx` | `search-card/index.tsx` |
 | Barrel exports | `index.ts` | `index.ts` (always) |
+
+**규칙**: 모든 모듈은 폴더 + `index.ts` 구조. 폴더명은 `kebab-case`.
 
 ## When to Create a New Slice
 
@@ -176,10 +199,12 @@ import { useSearch } from '@/entities';
 
 ## Checklist
 
-- [ ] Every folder has `index.ts`
-- [ ] Layer import rules respected (no upward/sideways imports)
-- [ ] Each slice contains only relevant segments
-- [ ] API files named `{domain}Api.ts`
-- [ ] Types in `model/types.ts`
-- [ ] Hooks named `use{Action}.ts`
-- [ ] All imports via barrel exports (`@/entities`, `@/features`, `@/shared`)
+- [ ] 모든 모듈은 `폴더/index.ts` 구조
+- [ ] 폴더명은 `kebab-case`
+- [ ] 레이어 import 규칙 준수 (역방향/횡방향 import 금지)
+- [ ] 각 slice는 필요한 segment만 포함
+- [ ] API: `{domain}-api/index.ts`
+- [ ] Types: `model/types/index.ts`
+- [ ] Hooks: `use-{action}/index.ts`
+- [ ] Stores: `{domain}-store/index.ts`
+- [ ] 모든 import는 barrel export 통해서 (`@/entities`, `@/features`, `@/shared`)
