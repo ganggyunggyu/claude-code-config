@@ -6,6 +6,9 @@ debug/
 file-history/
 history.jsonl
 ide/
+backups/
+sessions/
+transcripts/
 session-env/
 shell-snapshots/
 statsig/
@@ -24,6 +27,7 @@ stats-cache.json
 *.lock
 *.log
 .DS_Store
+mcp-needs-auth-cache.json
 
 # Node modules (혹시 있을 수 있으니)
 node_modules/

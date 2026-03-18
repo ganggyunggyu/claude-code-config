@@ -15,7 +15,41 @@
       "Bash(npx tsc:*)",
       "Bash(BATCH_SIZE=30 MIN_DELAY=11 MAX_DELAY=15 HEADLESS=true CAPTCHA_API_KEY=* npx tsx:*)",
       "Bash(CAPTCHA_API_KEY=* BATCH_SIZE=25 MIN_DELAY=35 MAX_DELAY=40 HEADLESS=true npx tsx:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(ls:*)",
+      "Bash(lsof:*)",
+      "Read(//Users/ganggyunggyu/.claude/rules/**)",
+      "Read(//Users/ganggyunggyu/.claude/**)",
+      "WebFetch(domain:blog.naver.com)",
+      "Bash(curl:*)",
+      "Bash(python3 -c \" import sys, re xml = sys.stdin.read\\(\\) # Extract titles titles = re.findall\\(r''<title><!\\\\[CDATA\\\\[\\([^\\\\]]+\\)\\\\]\\\\]></title>'', xml\\) # Extract descriptions descs = re.findall\\(r''<description><!\\\\[CDATA\\\\[\\([^\\\\]]*\\)\\\\]\\\\]></description>'', xml\\) print\\(''=== Blog Title ===''\\) if titles: print\\(titles[0]\\) print\\(\\) print\\(''=== Blog Description ===''\\) if descs: print\\(descs[0][:200]\\) print\\(\\) print\\(''=== Recent Posts ===''\\) for t in titles[1:20]: print\\(f'' - {t}''\\) \")",
+      "Bash(kill:*)",
+      "Bash(git -C /Users/ganggyunggyu/temp-image-gen status)",
+      "Bash(git -C /Users/ganggyunggyu/temp-image-gen diff --stat)",
+      "Bash(git -C /Users/ganggyunggyu/temp-image-gen log --oneline -5)",
+      "Bash(git -C /Users/ganggyunggyu/temp-image-gen diff scripts/generate-keyword-category-txt.ts scripts/lib/blog-account-map.ts)",
+      "Bash(git -C /Users/ganggyunggyu/temp-image-gen add scripts/generate-keyword-category-txt.ts scripts/lib/blog-account-map.ts)",
+      "Bash(git -C:*)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:mersoom.com)",
+      "Bash(python3:*)",
+      "Bash(env:*)",
+      "Read(//Users/ganggyunggyu/**)",
+      "Bash(grep:*)",
+      "Read(//Volumes/21lab_광고사업본부/3. 21lab \\(팀 폴더 충돌\\)/NEW 맛집건 이미지+프롬프트/샤브밀/수원역맛집/**)",
+      "Bash(for blogId in hagyga mixxut mzuul nahhjo ynattg)",
+      "Bash(echo:*)",
+      "Read(//Users/ganggyunggyu/Programing/blog-cron-bot/**)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/ganggyunggyu/.claude/commands",
+      "/Users/ganggyunggyu/Programing/mersoom-bot/.claude/commands",
+      "/Volumes/21lab_광고사업본부/3. 21lab (팀 폴더 충돌)/NEW 맛집건 이미지+프롬프트/샤브밀/수원역맛집",
+      "/Users/ganggyunggyu/Programing/blog-cron-bot",
+      "/Users/ganggyunggyu/Programing/cafe-bot/scripts/artifacts"
     ]
-  }
+  },
+  "effortLevel": "high"
 }
