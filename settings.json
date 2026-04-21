@@ -51,5 +51,17 @@
       "/Users/ganggyunggyu/Programing/cafe-bot/scripts/artifacts"
     ]
   },
+  "enabledPlugins": {
+    "discord@claude-plugins-official": true,
+    "ouroboros@ouroboros": true
+  },
+  "extraKnownMarketplaces": {
+    "ouroboros": {
+      "source": {
+        "source": "github",
+        "repo": "Q00/ouroboros"
+      }
+    }
+  },
   "effortLevel": "high"
 }

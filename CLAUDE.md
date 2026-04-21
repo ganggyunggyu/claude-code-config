@@ -30,6 +30,14 @@ Analyze the project and generate an appropriate AGENT.md for it.
 - Always use absolute imports (`@/`)
 - No inline anonymous handlers — define named functions first, then reference
 - Separate functions by domain — never pile unrelated logic into a single file
+
+### Browser
+
+- 브라우저가 필요한 작업은 외부 GUI 앱이 아닌 **OpenClaw 브라우저**를 우선 사용
+- 기본 명령: `openclaw browser open`, `openclaw browser snapshot`, `openclaw browser click/type/fill`
+- cmux 브라우저는 보조 수단으로만 사용 (OpenClaw이 안 될 때)
+- 서브 에이전트에게 브라우저 작업 위임 시 **반드시 "OpenClaw 브라우저 기준으로 작업해"** 지침 포함
+- 상세 사용법은 `rules/cmux-browser.md` 참조
 </common_rules>
 
 <custom_commands>

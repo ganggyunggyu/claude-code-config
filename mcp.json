@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ouroboros": {
+      "command": "/Users/ganggyunggyu/.local/bin/ouroboros",
+      "args": [
+        "mcp",
+        "serve"
+      ],
+      "timeout": 600
+    }
+  }
+}
