@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "auto",
     "allow": [
       "Bash(npx playwright install:*)",
       "Bash(npm uninstall:*)",
@@ -44,6 +43,7 @@
       "Bash(sort:*)",
       "Bash(uniq:*)"
     ],
+    "defaultMode": "auto",
     "additionalDirectories": [
       "/Users/ganggyunggyu/.claude/commands",
       "/Users/ganggyunggyu/Programing/mersoom-bot/.claude/commands",
@@ -64,5 +64,6 @@
       }
     }
   },
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "skipAutoPermissionPrompt": true
 }
