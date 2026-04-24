@@ -9,13 +9,5 @@
       "allowFrom": []
     }
   },
-  "pending": {
-    "5f2c4a": {
-      "senderId": "376174874223181825",
-      "chatId": "1491718554071076916",
-      "createdAt": 1775728247970,
-      "expiresAt": 1775731847970,
-      "replies": 1
-    }
-  }
+  "pending": {}
 }
