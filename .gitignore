@@ -28,6 +28,7 @@ stats-cache.json
 *.log
 .DS_Store
 mcp-needs-auth-cache.json
+channels/discord/.env
 
 # Node modules (혹시 있을 수 있으니)
 node_modules/
