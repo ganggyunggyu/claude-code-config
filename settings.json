@@ -53,8 +53,7 @@
     ]
   },
   "enabledPlugins": {
-    "discord@claude-plugins-official": true,
-    "ouroboros@ouroboros": true
+    "discord@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ouroboros": {
