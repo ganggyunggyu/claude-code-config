@@ -382,7 +382,7 @@ const handleStop = async (input) => {
 
   await removeState(input.session_id);
   return {
-    decision: "continue",
+    continue: true,
   };
 };
 
